@@ -45,7 +45,6 @@ class Text:
         )
         self.forgot_text.pack(padx=5, pady=5)
         self.root.mainloop()
-        # Add a variable to keep track of incorrect attempts
 
     def submit(self):
         credentials_correct = False
