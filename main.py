@@ -120,7 +120,6 @@ class Text:
                 event.widget.insert(tk.END, "Email")
             elif event.widget == self.sign_box3:
                 event.widget.insert(tk.END, "Password")
-            # Add similar conditions for other entry boxes if needed
 
     def submit_sign(self):
         name = self.sign_box.get()
