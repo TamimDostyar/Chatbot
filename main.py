@@ -2,8 +2,6 @@ import tkinter as tk
 from magic_app import function
 import csv
 from magic_app import chat
-SimpleChatbot = chat.SimpleChatbot()
-Forget = function.Forget()
 
 class Text:
     def __init__(self, name: str, password: str):
@@ -23,12 +21,12 @@ class Text:
             foreground="white",
         )
         self.label1.pack(pady=30)
-        self.box_name = tk.Entry(self.root, fg="white", font=("Arial", 15))
+        self.box_name = tk.Entry(self.root, fg="black", font=("Arial", 15))
         self.box_name.insert(tk.END, "Name")
         self.box_name.bind("<FocusIn>", self.clear_text)
         self.box_name.bind("<FocusOut>", self.restore_default_text)
         self.box_name.pack(padx=2, pady=5)
-        self.box_name1 = tk.Entry(self.root, fg="white", font=("Arial", 15))
+        self.box_name1 = tk.Entry(self.root, fg="black", font=("Arial", 15))
         self.box_name1.insert(tk.END, "Password")
         self.box_name1.bind("<FocusIn>", self.clear_text)
         self.box_name1.bind("<FocusOut>", self.restore_default_text)
@@ -42,7 +40,7 @@ class Text:
         )
         self.signbutton.pack(padx=5, pady=5)
         self.forgot_text = tk.Button(
-            self.root, text="Forget Password", font=("Arial", 10), command=Forget
+            self.root, text="Forget Password", font=("Arial", 10), command=function.Forget
         )
         self.forgot_text.pack(padx=5, pady=5)
         self.root.mainloop()
@@ -61,7 +59,7 @@ class Text:
                     break
 
         if credentials_correct:
-            SimpleChatbot()
+            chat.SimpleChatbot()
         if not credentials_correct:
             self._incorrect_attempts += 1
             if self._incorrect_attempts == 1:
