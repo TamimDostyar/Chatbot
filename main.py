@@ -1,8 +1,9 @@
 import tkinter as tk
-from function import Forget
+from magic_app import function
 import csv
-from chat import SimpleChatbot
-
+from magic_app import chat
+SimpleChatbot = chat.SimpleChatbot()
+Forget = function.Forget()
 
 class Text:
     def __init__(self, name: str, password: str):
